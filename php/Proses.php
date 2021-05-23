@@ -11,7 +11,32 @@ class Proses{
         
     }
 
+    public function LihatData(){
 
+
+
+    }
+
+    public function PencarianData(){
+
+
+    }
+
+    public function EditData(){
+
+
+    }
+
+    public function TambahData(){
+
+
+    }
+
+    public function HapusData(){
+
+
+
+    }
 
 }
 
