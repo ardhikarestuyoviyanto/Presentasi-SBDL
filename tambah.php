@@ -25,25 +25,25 @@
                 <a href="index.php" style="float:right;" role="button" class="btn btn-success btn-sm"><i class="fas fa-undo-alt"></i> Kembali</a>
             </div>
             <div class="card-body">
-                <form>
+            <form action="./php/Proses.php?tambah" method="POST">
                     <div class="row mb-3">
                         <label for="nim" class="col-sm-2 col-form-label">NIM</label>
                         <div class="col-sm-10">
-                        <input type="text" class="form-control" id="nim" name="nim" required placeholder="Masukkan Nim">
+                        <input type="text" class="form-control" id="nim_anggota" name="nim_anggota" required placeholder="Masukkan Nim">
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                         <div class="col-sm-10">
-                        <input type="text" class="form-control" id="nama" name="nama" required placeholder="Masukkan Nama">
+                        <input type="text" class="form-control" id="nama_anggota" name="nama_anggota" required placeholder="Masukkan Nama">
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <label for="nama" class="col-sm-2 col-form-label">Jurusan</label>
                         <div class="col-sm-10">
-                            <select class="form-select" aria-label="Default select example" required>
+                            <select class="form-select" aria-label="Default select example" required name="jurusan">
                                 <option selected value="">- Pilih Jurusan -</option>
                                 <option value="Teknik Informatika">Teknik Informatika</option>
                                 <option value="Matematika">Matematika</option>
@@ -56,13 +56,13 @@
                         <label for="nama" class="col-sm-2 col-form-label">Jenis Kelamin</label>
                         <div class="col-sm-10">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="jeniskelamin" id="exampleRadios1" value="L" checked>
+                                <input class="form-check-input" type="radio" name="jeniskelamin_anggota" id="exampleRadios1" value="L" checked>
                                 <label class="form-check-label" for="exampleRadios1">
                                     Laki - Laki
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="jeniskelamin" id="exampleRadios2" value="P">
+                                <input class="form-check-input" type="radio" name="jeniskelamin_anggota" id="exampleRadios2" value="P">
                                 <label class="form-check-label" for="exampleRadios2">
                                     Perempuan
                                 </label>
@@ -73,12 +73,12 @@
                     <div class="row mb-3">
                         <label for="nama" class="col-sm-2 col-form-label">No Hp</label>
                         <div class="col-sm-10">
-                        <input type="text" class="form-control" id="nama" name="nohp" required placeholder="Masukkan No Hp">
+                        <input type="text" class="form-control" id="nama" name="notelp_anggota" required placeholder="Masukkan No Hp">
                         </div>
                     </div>
                 </div>
                 <div class="card-footer bg-white">
-                    <button type="submit" class="btn btn-primary" style="float:right;"><i class="fas fa-save"></i> Simpan</button>
+                    <button type="submit" class="btn btn-primary text-white" style="float:right;"><i class="fas fa-plus"></i> Tambah</button>
                 </div>
             </form>
         </div>
@@ -87,4 +87,8 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<?php if(isset($_GET['sukses'])): ?>
+<script>swal("Berhasil Tambah Data");</script>
+<?php endif; ?>
 </html>
